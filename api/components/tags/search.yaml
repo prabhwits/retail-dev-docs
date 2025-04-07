@@ -1,0 +1,14 @@
+catalog_full:
+  - code: PAYLOAD_TYPE
+    description: Description about the tags
+    reference: <PR/Issue/Discussion Links md format text>
+catalog_inc:
+  - code: MODE
+    description: Description about the tags
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: START_TIME
+    description: In this case, incremental changes will be pushed from Context.timestamp and aggregated within a range of 1-30 mins at the seller NP discretion;
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: END_TIME
+    description: Description about the tags
+    reference: <PR/Issue/Discussion Links md format text>
