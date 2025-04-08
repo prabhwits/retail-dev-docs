@@ -33,9 +33,18 @@ confirm:
       #   $ref: "./tag-group.yaml#/order/quote"
       # tags:
       #   $ref: "./tag-group.yaml#/order/tags"
-on_confirm: *ref0
-update: *ref0
-on_update: *ref0
+on_confirm: 
+  message: 
+    order:
+      $ref: './on_confirm.yaml#/order'
+update: 
+  message:
+    order:
+      $ref: './update.yaml#/order'
+on_update: 
+  message:
+    order:
+      $ref: './on_update.yaml#/order'
 on_cancel: *ref0
 on_track:
   message:
