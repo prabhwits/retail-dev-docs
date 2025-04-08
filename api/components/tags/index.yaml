@@ -6,13 +6,17 @@ on_search:
   message:
     catalog:
       "bpp/descriptor":
-        $ref: "./tag-group.yaml#/bpp_descriptor"
+        $ref: "./on_search.yaml#/message/catalog/bpp/descriptor"
       "bpp/providers":
-        $ref: "./tag-group.yaml#/bpp_providers"
+        $ref: "./on_search.yaml#/message/catalog/bpp/providers"
+select:
+  message:
+    order:
+      $ref: './select.yaml#/message/order'
 on_select: &ref0
   message:
     order:
-      $ref: "./tag-group.yaml#/order/items"
+      $ref: "./on_select.yaml#/message/order"
 init: 
   message:
     order:

@@ -7,12 +7,15 @@ search:
         type: 
           $ref: "./fulfillments.yaml#/fulfillments/type"
       tags: 
-        $ref: "./tags.yaml#/intentTags"
+        $ref: "./search.yaml#/intentTags"
+      payment:
+        $ref: "./search.yaml#/intentPayment"
 on_search:
   message:
     catalog:
       "bpp/descriptor":
-        $ref: "./descriptor.yaml#/descriptor"
+        code: 
+          $ref: "./on_search.yaml#/message/catalog/bpp/descriptor/tags"
       "bpp/fulfillments": *fulfillments
       "bpp/providers":
         fulfillments: *fulfillments

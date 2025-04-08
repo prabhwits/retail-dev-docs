@@ -1,0 +1,20 @@
+intentTags:
+  bap_features:
+    - code: 1
+      description: "yes/no"
+      reference: "<PR/Issue/Discussion Links md format text>"
+    - code: 2
+      description: "yes/no"
+      reference: "<PR/Issue/Discussion Links md format text>"
+    - code: 3
+      description: "yes/no"
+      reference: "<PR/Issue/Discussion Links md format text>"
+  bap_promos: 
+    - code: CATEGORY
+      description: "as per https://docs.google.com/spreadsheets/d/1APAvavF_BNbTA89benAlGtv0GuFvpn2b6XXi4lSdTTw/edit?gid=0#gid=0"
+      reference: "<PR/Issue/Discussion Links md format text>"
+
+intentPayment:
+  - code: "@ondc/org/buyer_app_finder_fee_type"
+    description: "percent/amount"
+    reference: "<PR/Issue/Discussion Links md format text>"

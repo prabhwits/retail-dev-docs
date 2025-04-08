@@ -1,0 +1,122 @@
+message:
+  catalog:
+    bpp:
+      descriptor:
+        tags:
+            - code: np_type
+              description: '["ISN", "MSN"]'
+              reference: ISN
+            - code: accept_bap_terms
+              description: '["Y", "N"]'
+              reference: Y
+            - code: collect_payment
+              description: '["Y", "N"]'
+              reference: Y
+            - code: mandatory_arbitration
+              description: '["true", "false"]'
+              reference: false
+      providers:
+        categories:
+          tags:
+            - code: type
+              description: Category tagging for menu types
+              reference: "<PR/Issue/Discussion Links md format text>"
+              list:
+                - code: custom_menu
+                  description: '["custom_menu", "custom_group", "variant_group"]'
+                  reference: custom_menu
+            - code: timing
+              description: Category tagging for timing types
+              reference: "<PR/Issue/Discussion Links md format text>"
+              list:
+                - code: type
+                  description: "['Self-Pickup', 'Order', 'Delivery', 'All']"
+                  reference: Order
+            - code: config
+              description: Category configuration input type
+              reference: "<PR/Issue/Discussion Links md format text>"
+              list:
+                - code: input
+                  description: '["select", "text"]'
+                  reference: select
+            - code: np_fees
+              description: Network Participant fee metadata
+              reference: "<PR/Issue/Discussion Links md format text>"
+              list:
+                - code: channel_margin_type
+                  description: '["percent", "amount"]'
+                  reference: percent
+        items:
+          tags:
+            - code: type
+              description: Item types
+              reference: "<PR/Issue/Discussion Links md format text>"
+              list:
+                - code: type
+                  description: '["item", "dynamic_item", "customization"]'
+                  reference: item
+            - code: attribute
+              description: Attributes related to items
+              reference: "<PR/Issue/Discussion Links md format text>"
+              list:
+                - code: gender
+                  description: "https://github.com/ONDC-Official/protocol-network-extension/tree/main/enums/retail"
+                  reference: male
+            - code: veg_nonveg
+              description: Vegetarian or non-vegetarian categorization
+              reference: "<PR/Issue/Discussion Links md format text>"
+              list:
+                - code: veg
+                  description: '["veg", "non_veg", "egg"]'
+                  reference: yes
+            - code: np_fees
+              description: Item-specific NP fees
+              reference: "<PR/Issue/Discussion Links md format text>"
+              list:
+                - code: channel_margin_type
+                  description: '["percent", "amount"]'
+                  reference: percent
+        offers:
+          tags:
+            - code: benefit
+              description: Offer benefit types
+              reference: "<PR/Issue/Discussion Links md format text>"
+              list:
+                - code: value_type
+                  description: '["percent", "amount"]'
+                  reference: percent
+            - code: meta
+              description: Offer meta configuration
+              reference: "<PR/Issue/Discussion Links md format text>"
+              list:
+                - code: additive
+                  description: '["yes", "no"]'
+                  reference: no
+                - code: auto
+                  description: '["yes", "no"]'
+                  reference: yes
+        tags:
+          - code: serviceability
+            description: Serviceability details
+            reference: "<PR/Issue/Discussion Links md format text>"
+            list:
+              - code: type
+                description: '["10" (hyperlocal), "11" (intercity), "12" (pan-India), "13" (polygon)]'
+                reference: "10"
+              - code: unit
+                description: '["km", "geojson"]'
+                reference: km
+          - code: catalog_link
+            description: Catalog link format
+            reference: "<PR/Issue/Discussion Links md format text>"
+            list:
+              - code: type
+                description: '["link", "inline"]'
+                reference: inline
+          - code: np_fees
+            description: Provider-level NP fees
+            reference: "<PR/Issue/Discussion Links md format text>"
+            list:
+              - code: channel_margin_type
+                description: '["percent", "amount"]'
+                reference: percent
