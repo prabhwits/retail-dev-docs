@@ -572,8 +572,7 @@ components:
           description: "Area code. This can be Pincode, ZIP code or any equivalent"
     Agent:
       description: Describes an order executor
-      allOf:
-        - $ref: "#/components/schemas/Contact"
+      $ref: "#/components/schemas/Contact"
     Authorization:
       description: Describes an authorization mechanism
       type: object
@@ -646,8 +645,7 @@ components:
       properties:
         fulfillment_state:
           description: The state of fulfillment during which these terms are applicable.
-          allOf:
-            - $ref: "#/components/schemas/FulfillmentState"
+          $ref: "#/components/schemas/FulfillmentState"
         cancellation_fee:
           $ref: "#/components/schemas/Fee"
         external_ref:
@@ -931,12 +929,10 @@ components:
       properties:
         percentage:
           description: Percentage of a value
-          allOf:
-            - $ref: "#/components/schemas/DecimalValue"
+          $ref: "#/components/schemas/DecimalValue"
         amount:
           description: A fixed value
-          allOf:
-            - $ref: "#/components/schemas/Price"
+          $ref: "#/components/schemas/Price"
     Fulfillment:
       description: Describes how a single product/service will be rendered/fulfilled to the end customer
       type: object
@@ -1136,8 +1132,7 @@ components:
           description: Categories this item can be listed under
           type: array
           items:
-            allOf:
-              - $ref: "#/components/schemas/Category/properties/id"
+            $ref: "#/components/schemas/Category/properties/id"
         fulfillment_id:
           $ref: "#/components/schemas/Fulfillment/properties/id"
         fulfillment_ids:
@@ -1245,6 +1240,9 @@ components:
       properties:
         id:
           description: This is the most unique identifier of a service item. An example of an Item ID could be the SKU of a product.
+          type: string
+        location_id:
+          description: This is the most unique identifier of a location item.
           type: string
         fulfillment_id:
           type: string
@@ -1360,8 +1358,7 @@ components:
           description: Categories this item can be listed under
           type: array
           items:
-            allOf:
-              - $ref: "#/components/schemas/Category/properties/id"
+            $ref: "#/components/schemas/Category/properties/id"
         item_ids:
           type: array
           items:
@@ -1597,13 +1594,16 @@ components:
                 type: string
                 format: date-time
     IntentPayment:
-      "@ondc/org/buyer_app_finder_fee_type":
-        type: string
-        enum:
-          - Amount
-          - Percent
-      "@ondc/org/buyer_app_finder_fee_amount":
-        $ref: "#/components/schemas/DecimalValue"
+      description: Describes a payment.
+      type: object
+      properties:
+        "@ondc/org/buyer_app_finder_fee_type":
+          type: string
+          enum:
+            - Amount
+            - Percent
+        "@ondc/org/buyer_app_finder_fee_amount":
+          $ref: "#/components/schemas/DecimalValue"
     Person:
       description: Describes a person.
       type: object
@@ -1694,8 +1694,10 @@ components:
                   - misc
                   - discount
               item:
+                type: object
                 properties:
                   quantity:
+                    type: object
                     properties:
                       available:
                         $ref: "#/components/schemas/ItemQuantity/properties/available"
@@ -1910,8 +1912,7 @@ components:
           format: uri
         location:
           description: "In case there is no real-time tracking endpoint available, this field will contain the latest location of the entity being tracked. The BPP will update this value everytime the BAP calls the track API."
-          allOf:
-            - $ref: "#/components/schemas/TrackLocation"
+          $ref: "#/components/schemas/TrackLocation"
         status:
           description: "This value indicates if the tracking is currently active or not. If this value is `active`, then the BAP can begin tracking the order. If this value is `inactive`, the tracking URL is considered to be expired and the BAP should stop tracking the order."
           type: string

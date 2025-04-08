@@ -104,7 +104,13 @@ paths:
                                   service item. An example of an Item ID could
                                   be the SKU of a product.
                                 type: string
+                              location_id:
+                                description: >-
+                                  This is the most unique identifier of a
+                                  location item.
+                                type: string
                               quantity:
+                                description: quantity
                                 type: object
                                 properties:
                                   count:
@@ -1177,8 +1183,7 @@ components:
           description: Area code. This can be Pincode, ZIP code or any equivalent
     Agent:
       description: Describes an order executor
-      allOf:
-        - $ref: '#/components/schemas/Contact'
+      $ref: '#/components/schemas/Contact'
     Authorization:
       description: Describes an authorization mechanism
       type: object
@@ -1254,8 +1259,7 @@ components:
       properties:
         fulfillment_state:
           description: The state of fulfillment during which these terms are applicable.
-          allOf:
-            - $ref: '#/components/schemas/FulfillmentState'
+          $ref: '#/components/schemas/FulfillmentState'
         cancellation_fee:
           $ref: '#/components/schemas/Fee'
         external_ref:
@@ -1563,12 +1567,10 @@ components:
       properties:
         percentage:
           description: Percentage of a value
-          allOf:
-            - $ref: '#/components/schemas/DecimalValue'
+          $ref: '#/components/schemas/DecimalValue'
         amount:
           description: A fixed value
-          allOf:
-            - $ref: '#/components/schemas/Price'
+          $ref: '#/components/schemas/Price'
     Fulfillment:
       description: >-
         Describes how a single product/service will be rendered/fulfilled to the
@@ -1799,8 +1801,7 @@ components:
           description: Categories this item can be listed under
           type: array
           items:
-            allOf:
-              - $ref: '#/components/schemas/Category/properties/id'
+            $ref: '#/components/schemas/Category/properties/id'
         fulfillment_id:
           $ref: '#/components/schemas/Fulfillment/properties/id'
         fulfillment_ids:
@@ -1935,6 +1936,9 @@ components:
             This is the most unique identifier of a service item. An example of
             an Item ID could be the SKU of a product.
           type: string
+        location_id:
+          description: This is the most unique identifier of a location item.
+          type: string
         fulfillment_id:
           type: string
           description: Unique reference ID to the fulfillment of an order
@@ -2055,8 +2059,7 @@ components:
           description: Categories this item can be listed under
           type: array
           items:
-            allOf:
-              - $ref: '#/components/schemas/Category/properties/id'
+            $ref: '#/components/schemas/Category/properties/id'
         item_ids:
           type: array
           items:
@@ -2310,13 +2313,16 @@ components:
                 type: string
                 format: date-time
     IntentPayment:
-      '@ondc/org/buyer_app_finder_fee_type':
-        type: string
-        enum:
-          - Amount
-          - Percent
-      '@ondc/org/buyer_app_finder_fee_amount':
-        $ref: '#/components/schemas/DecimalValue'
+      description: Describes a payment.
+      type: object
+      properties:
+        '@ondc/org/buyer_app_finder_fee_type':
+          type: string
+          enum:
+            - Amount
+            - Percent
+        '@ondc/org/buyer_app_finder_fee_amount':
+          $ref: '#/components/schemas/DecimalValue'
     Person:
       description: Describes a person.
       type: object
@@ -2412,8 +2418,10 @@ components:
                   - misc
                   - discount
               item:
+                type: object
                 properties:
                   quantity:
+                    type: object
                     properties:
                       available:
                         $ref: '#/components/schemas/ItemQuantity/properties/available'
@@ -2718,8 +2726,7 @@ components:
             field will contain the latest location of the entity being tracked.
             The BPP will update this value everytime the BAP calls the track
             API.
-          allOf:
-            - $ref: '#/components/schemas/TrackLocation'
+          $ref: '#/components/schemas/TrackLocation'
         status:
           description: >-
             This value indicates if the tracking is currently active or not. If
@@ -6422,17 +6429,116 @@ x-tags:
         quote: *ref_33
         tags: *ref_34
   on_confirm: *ref_35
+  cancel:
+    message:
+      descriptor:
+        tags:
+          - code: params
+            description: params
+            reference: <PR/Issue/Discussion Links md format text>
+            list:
+              - code: force
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: ttl_response
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+          - code: cancel_request
+            description: params
+            reference: <PR/Issue/Discussion Links md format text>
+            list:
+              - code: initiated_by
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
   update: *ref_35
   on_update: *ref_35
-  on_cancel: *ref_35
+  on_cancel:
+    message:
+      descriptor:
+        tags:
+          - code: cancel_request
+            description: cancel_request
+            reference: <PR/Issue/Discussion Links md format text>
+            list:
+              - code: retry_count
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: rto_id
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: reason_id
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: initiated_by
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: id
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+          - code: igm_request
+            description: igm_request
+            reference: <PR/Issue/Discussion Links md format text>
+            list:
+              - code: id
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+          - code: precancel_state
+            description: precancel_state
+            reference: <PR/Issue/Discussion Links md format text>
+            list:
+              - code: fulfillment_state
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: updated_at
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+          - code: quote_trail
+            description: quote_trail
+            reference: <PR/Issue/Discussion Links md format text>
+            list:
+              - code: type
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: id
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: currency
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: value
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+          - code: quote
+            description: quote
+            reference: <PR/Issue/Discussion Links md format text>
+            list:
+              - code: type
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
   on_track:
     message:
-      tracking:
+      descriptor:
         tags:
-          - code: PATH
-            description: Description about the tags
+          - code: order
+            description: order
             reference: <PR/Issue/Discussion Links md format text>
-            required: required
+            list:
+              - code: id
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+          - code: config
+            description: config
+            reference: <PR/Issue/Discussion Links md format text>
+            list:
+              - code: attr
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: type
+                description: Description about the tags
+                reference: <PR/Issue/Discussion Links md format text>
+          - code: path
+            description: path
+            reference: <PR/Issue/Discussion Links md format text>
             list:
               - code: lat_lng
                 description: Description about the tags
