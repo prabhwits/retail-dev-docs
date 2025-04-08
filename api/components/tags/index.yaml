@@ -13,22 +13,26 @@ on_select: &ref0
   message:
     order:
       $ref: "./tag-group.yaml#/order/items"
-init: *ref0
+init: 
+  message:
+    order:
+      $ref: "./init.yaml#/order"
 on_init: &ref0
   message:
     order:
-      $ref: "./tag-group.yaml#/order"
+      $ref: "./on_init.yaml#/order"
 confirm:
   message:
     order:
-      items:
-        $ref: "./tag-group.yaml#/order/items"
-      fulfillments:
-        $ref: "./tag-group.yaml#/order_confirm_fulfillments"
-      quote:
-        $ref: "./tag-group.yaml#/order/quote"
-      tags:
-        $ref: "./tag-group.yaml#/order/tags"
+      $ref: "./confirm.yaml#/order"
+      # items:
+      #   $ref: "./tag-group.yaml#/order/items"
+      # fulfillments:
+      #   $ref: "./tag-group.yaml#/order_confirm_fulfillments"
+      # quote:
+      #   $ref: "./tag-group.yaml#/order/quote"
+      # tags:
+      #   $ref: "./tag-group.yaml#/order/tags"
 on_confirm: *ref0
 update: *ref0
 on_update: *ref0
