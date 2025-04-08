@@ -16,6 +16,8 @@ on_search:
           quantity:
             unitized: &measure
               $ref: "./measure.yaml"
+          time:
+            $ref: "./items.yaml#/time"
         offers:
           $ref: "./offers.yaml#/offers"
 select:

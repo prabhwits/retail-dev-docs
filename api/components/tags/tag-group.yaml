@@ -17,7 +17,7 @@ intent:
       reference: <PR/Issue/Discussion Links md format text>
       required: required
       list:
-        $ref: "./tag.yaml#/bap_terms"
+        $ref: "./search.yaml#/bap_terms"
 bpp_descriptor:
   tags:
     - code: BPP_TERMS
