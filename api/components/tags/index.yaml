@@ -52,8 +52,8 @@ on_update:
 on_cancel: *ref0
 on_track:
   message:
-    tracking:
-      $ref: "./tag-group.yaml#/tracking"
+    descriptor:
+      $ref: "./on_track.yaml#/descriptor"
 on_status:
   message:
     order:
