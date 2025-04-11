@@ -3,120 +3,229 @@ message:
     bpp:
       descriptor:
         tags:
-            - code: np_type
-              description: '["ISN", "MSN"]'
-              reference: ISN
-            - code: accept_bap_terms
-              description: '["Y", "N"]'
-              reference: Y
-            - code: collect_payment
-              description: '["Y", "N"]'
-              reference: Y
-            - code: mandatory_arbitration
-              description: '["true", "false"]'
-              reference: false
+          np_type:
+            - code: "ISN"
+              description: about the enum
+              reference: "<PR/Issue/Discussion Links md format text>"
+            - code: "MSN"
+              description: about the enum
+              reference: "<PR/Issue/Discussion Links md format text>"
+          accept_bap_terms:
+            - code: "Y"
+              description: about the enum
+              reference: "<PR/Issue/Discussion Links md format text>"
+            - code: "N"
+              description: about the enum
+              reference: "<PR/Issue/Discussion Links md format text>"
+          collect_payment:
+            - code: "Y"
+              description: about the enum
+              reference: "<PR/Issue/Discussion Links md format text>"
+            - code: "N"
+              description: about the enum
+              reference: "<PR/Issue/Discussion Links md format text>"
+          mandatory_arbitration:
+            - code: "TRUE"
+              description: about the enum
+              reference: "<PR/Issue/Discussion Links md format text>"
+            - code: "FALSE"
+              description: about the enum
+              reference: "<PR/Issue/Discussion Links md format text>"
       providers:
         categories:
           tags:
-            - code: type
-              description: Category tagging for menu types
-              reference: "<PR/Issue/Discussion Links md format text>"
-              list:
-                - code: custom_menu
-                  description: '["custom_menu", "custom_group", "variant_group"]'
-                  reference: custom_menu
-            - code: timing
-              description: Category tagging for timing types
-              reference: "<PR/Issue/Discussion Links md format text>"
-              list:
-                - code: type
-                  description: "['Self-Pickup', 'Order', 'Delivery', 'All']"
-                  reference: Order
-            - code: config
-              description: Category configuration input type
-              reference: "<PR/Issue/Discussion Links md format text>"
-              list:
-                - code: input
-                  description: '["select", "text"]'
-                  reference: select
-            - code: np_fees
-              description: Network Participant fee metadata
-              reference: "<PR/Issue/Discussion Links md format text>"
-              list:
-                - code: channel_margin_type
-                  description: '["percent", "amount"]'
-                  reference: percent
+            type:
+              type:
+                - code: "CUSTOM_MENU"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "CUSTOM_GROUP"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "VARIANT_GROUP"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+            timing:
+              type:
+                - code: "SELF-PICKUP"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "ORDER"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "DELIVERY"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "ALL"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+            config:
+              input:
+                - code: "SELECT"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "TEXT"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+            np_fees:
+              channel_margin_type:
+                - code: "PERCENT"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "AMOUNT"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
         items:
+          time:
+            label:
+              - code: "ENABLE"
+                description: about the enum
+                reference: "<PR/Issue/Discussion Links md format text>"
+              - code: "DISABLE"
+                description: about the enum
+                reference: "<PR/Issue/Discussion Links md format text>"
           tags:
-            - code: type
-              description: Item types
-              reference: "<PR/Issue/Discussion Links md format text>"
-              list:
-                - code: type
-                  description: '["item", "dynamic_item", "customization"]'
-                  reference: item
-            - code: attribute
-              description: Attributes related to items
-              reference: "<PR/Issue/Discussion Links md format text>"
-              list:
-                - code: gender
-                  description: "https://github.com/ONDC-Official/protocol-network-extension/tree/main/enums/retail"
-                  reference: male
-            - code: veg_nonveg
-              description: Vegetarian or non-vegetarian categorization
-              reference: "<PR/Issue/Discussion Links md format text>"
-              list:
-                - code: veg
-                  description: '["veg", "non_veg", "egg"]'
-                  reference: yes
-            - code: np_fees
-              description: Item-specific NP fees
-              reference: "<PR/Issue/Discussion Links md format text>"
-              list:
-                - code: channel_margin_type
-                  description: '["percent", "amount"]'
-                  reference: percent
+            type:
+              type:
+                - code: "ITEM"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "DYNAMIC_ITEM"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "CUSTOMIZATION"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+            attribute:
+              gender:
+                - code: "https://github.com/ONDC-Official/protocol-network-extension/tree/main/enums/retail"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+            veg_nonveg:
+              veg:
+                - code: "VEG"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "NON_VEG"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "EGG"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+            np_fees:
+              channel_margin_type:
+                - code: "PERCENT"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "AMOUNT"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+            category_id:
+                - code: "https://docs.google.com/spreadsheets/d/1APAvavF_BNbTA89benAlGtv0GuFvpn2b6XXi4lSdTTw/edit?gid=0#gid=0"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+            quantity:
+              unitized:
+                measure:
+                  unit:
+                    - code: "UNIT"
+                      description: about the enum
+                      reference: "<PR/Issue/Discussion Links md format text>"
+                    - code: "DOZEN"
+                      description: about the enum
+                      reference: "<PR/Issue/Discussion Links md format text>"
+                    - code: "GRAM"
+                      description: about the enum
+                      reference: "<PR/Issue/Discussion Links md format text>"
+                    - code: "KILOGRAM"
+                      description: about the enum
+                      reference: "<PR/Issue/Discussion Links md format text>"
+                    - code: "TONNE"
+                      description: about the enum
+                      reference: "<PR/Issue/Discussion Links md format text>"
+                    - code: "LITRE"
+                      description: about the enum
+                      reference: "<PR/Issue/Discussion Links md format text>"
+                    - code: "MILLILITRE"
+                      description: about the enum
+                      reference: "<PR/Issue/Discussion Links md format text>"
         offers:
           tags:
-            - code: benefit
-              description: Offer benefit types
-              reference: "<PR/Issue/Discussion Links md format text>"
-              list:
-                - code: value_type
-                  description: '["percent", "amount"]'
-                  reference: percent
-            - code: meta
-              description: Offer meta configuration
-              reference: "<PR/Issue/Discussion Links md format text>"
-              list:
-                - code: additive
-                  description: '["yes", "no"]'
-                  reference: no
-                - code: auto
-                  description: '["yes", "no"]'
-                  reference: yes
+            benefit:
+              value_type:
+                - code: "PERCENT"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "AMOUNT"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+            meta:
+              additive:
+                - code: "YES"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "NO"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+              auto:
+                - code: "YES"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
+                - code: "NO"
+                  description: about the enum
+                  reference: "<PR/Issue/Discussion Links md format text>"
         tags:
-          - code: serviceability
-            description: Serviceability details
-            reference: "<PR/Issue/Discussion Links md format text>"
-            list:
-              - code: type
-                description: '["10" (hyperlocal), "11" (intercity), "12" (pan-India), "13" (polygon)]'
-                reference: "10"
-              - code: unit
-                description: '["km", "geojson"]'
-                reference: km
-          - code: catalog_link
-            description: Catalog link format
-            reference: "<PR/Issue/Discussion Links md format text>"
-            list:
-              - code: type
-                description: '["link", "inline"]'
-                reference: inline
-          - code: np_fees
-            description: Provider-level NP fees
-            reference: "<PR/Issue/Discussion Links md format text>"
-            list:
-              - code: channel_margin_type
-                description: '["percent", "amount"]'
-                reference: percent
+          serviceability:
+            type:
+              - code: "10 (HYPERLOCAL)"
+                description: about the enum
+                reference: "<PR/Issue/Discussion Links md format text>"
+              - code: "11 (INTERCITY)"
+                description: about the enum
+                reference: "<PR/Issue/Discussion Links md format text>"
+              - code: "12 (PAN-INDIA)"
+                description: about the enum
+                reference: "<PR/Issue/Discussion Links md format text>"
+              - code: "13 (POLYGON)"
+                description: about the enum
+                reference: "<PR/Issue/Discussion Links md format text>"
+            unit:
+              - code: "KM"
+                description: about the enum
+                reference: "<PR/Issue/Discussion Links md format text>"
+              - code: "GEOJSON"
+                description: about the enum
+                reference: "<PR/Issue/Discussion Links md format text>"
+          catalog_link:
+            type:
+              - code: "LINK"
+                description: about the enum
+                reference: "<PR/Issue/Discussion Links md format text>"
+              - code: "INLINE"
+                description: about the enum
+                reference: "<PR/Issue/Discussion Links md format text>"
+          np_fees:
+            channel_margin_type:
+              - code: "PERCENT"
+                description: about the enum
+                reference: "<PR/Issue/Discussion Links md format text>"
+              - code: "AMOUNT"
+                description: about the enum
+                reference: "<PR/Issue/Discussion Links md format text>"
+        time:
+          label:
+            - code: "ENABLE"
+              description: about the enum
+              reference: "<PR/Issue/Discussion Links md format text>"
+            - code: "DISABLE"
+              description: about the enum
+              reference: "<PR/Issue/Discussion Links md format text>"
+        locations:
+          time:
+            label:
+              - code: "ENABLE"
+                description: about the enum
+                reference: "<PR/Issue/Discussion Links md format text>"
+              - code: "DISABLE"
+                description: about the enum
+                reference: "<PR/Issue/Discussion Links md format text>"

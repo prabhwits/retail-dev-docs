@@ -1,20 +1,32 @@
 intentTags:
   bap_features:
-    - code: 1
-      description: "yes/no"
-      reference: "<PR/Issue/Discussion Links md format text>"
-    - code: 2
-      description: "yes/no"
-      reference: "<PR/Issue/Discussion Links md format text>"
-    - code: 3
-      description: "yes/no"
-      reference: "<PR/Issue/Discussion Links md format text>"
-  bap_promos: 
-    - code: CATEGORY
-      description: "as per https://docs.google.com/spreadsheets/d/1APAvavF_BNbTA89benAlGtv0GuFvpn2b6XXi4lSdTTw/edit?gid=0#gid=0"
+    1:
+      - code: "YES"
+        description: "Enum for feature 1."
+        reference: "<PR/Issue/Discussion Links md format text>"
+      - code: "NO"
+        description: "Enum for feature 1."
+        reference: "<PR/Issue/Discussion Links md format text>"
+    2:
+      - code: "YES"
+        description: "Enum for feature 2."
+        reference: "<PR/Issue/Discussion Links md format text>"
+      - code: "NO"
+        description: "Enum for feature 2."
+        reference: "<PR/Issue/Discussion Links md format text>"
+    3:
+      - code: "YES"
+        description: "Enum for feature 3."
+        reference: "<PR/Issue/Discussion Links md format text>"
+      - code: "NO"
+        description: "Enum for feature 3."
+        reference: "<PR/Issue/Discussion Links md format text>"
+  bap_promos:
+    - code: "CATEGORY"
+      description: "Enum for promotion category."
       reference: "<PR/Issue/Discussion Links md format text>"
 
 intentPayment:
   - code: "@ondc/org/buyer_app_finder_fee_type"
-    description: "percent/amount"
+    description: "Enum for buyer app finder fee type."
     reference: "<PR/Issue/Discussion Links md format text>"
